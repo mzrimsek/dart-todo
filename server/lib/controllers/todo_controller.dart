@@ -10,6 +10,8 @@ class TodoController extends HTTPController
   @httpGet
   getAllTodos() async
   {
+    var todoQuery = new Query<Todo>();
+    var todos = await todoQuery.fetch();
     return new Response.ok(todos);
   }
 }
