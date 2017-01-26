@@ -3,7 +3,11 @@ import 'package:dart_todo_server/dart_todo_server.dart';
 
 void main()
 {
-  var app = new Application<TodoRequestSink>();
+  var config = new TodoConfiguration("config.yaml.src");
+  var app = new Application<TodoRequestSink>()
+    ..configuration.configurationOptions = {
+      TodoRequestSink.ConfigurationKey: config
+    };
   var client = new TestClient(app);
 
   setUpAll(() async {
