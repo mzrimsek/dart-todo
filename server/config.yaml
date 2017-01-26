@@ -1,0 +1,6 @@
+database:
+  username: dart_todo_app
+  password: dart_todo
+  host: localhost
+  port: 5432
+  databaseName: dart_todo
