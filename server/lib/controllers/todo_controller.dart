@@ -23,7 +23,7 @@ class TodoController extends HTTPController
   }
 
   @httpPut
-  updateTodo(@HTTPPath("id")int id) async
+  updateTodo(@HTTPPath("id") int id) async
   {
     request.decodeBody();
     var requestBody = request.requestBodyObject;
@@ -35,6 +35,20 @@ class TodoController extends HTTPController
     if(updatedTodo != null)
     {
       return new Response.ok(updatedTodo);
+    }
+    return new Response.notFound();
+  }
+
+  @httpDelete
+  deleteTodo(@HTTPPath("id") int id) async
+  {
+    var deleteQuery = new Query<Todo>()
+      ..matchOn.id = id;
+    var numDeleted = await deleteQuery.delete();
+
+    if(numDeleted == 1)
+    {
+      return new Response.ok(null);
     }
     return new Response.notFound();
   }

@@ -83,4 +83,14 @@ void main()
     var response = await request.put();
     expect(response, hasStatus(404));
   });
+
+  test("/todos/id deletes todo", () async {
+    var response = await client.request("/todos/1").delete();
+    expect(response, hasResponse(200, isNull));
+  });
+
+  test("/todos/id out of range returns 404", () async {
+    var response = await client.request("/todos/5").delete();
+    expect(response, hasStatus(404));
+  });
 }
