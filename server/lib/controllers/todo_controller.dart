@@ -1,5 +1,4 @@
 import '../todo.dart';
-import 'dart:async';
 
 class TodoController extends HTTPController
 {
@@ -9,7 +8,7 @@ class TodoController extends HTTPController
   ];
 
   @httpGet
-  Future<Response> getAllTodos() async
+  getAllTodos() async
   {
     return new Response.ok(todos);
   }
