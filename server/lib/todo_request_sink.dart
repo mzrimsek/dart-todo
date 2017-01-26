@@ -22,7 +22,7 @@ class TodoRequestSink extends RequestSink
   void setupRouter(Router router)
   {
     router
-      .route("/todos")
+      .route("/todos/[:id]")
       .generate(() => new TodoController());
   }
 }
