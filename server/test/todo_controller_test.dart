@@ -49,12 +49,38 @@ void main()
     expect(response.decodedBody, hasLength(greaterThan(0)));
   });
 
-  test("/todos creates new todo", () async {
+  test("/todos returns new todo", () async {
+    var newText = "test todo";
     var request = client.request("/todos")
       ..json = {
-        "text": "test todo"
+        "text": newText
       };
     var response = await request.post();
-    expect(response, hasStatus(200));
+    expect(response, hasResponse(200, {
+        "id": greaterThan(0),
+        "text": newText
+      }));
+  });
+
+  test("/todos/id returns updated todo", () async {
+    var updatedText = "updated";
+    var request = client.request("/todos/1")
+      ..json = {
+        "text": updatedText
+      };
+    var response = await request.put();
+    expect(response, hasResponse(200, {
+      "id": equals(1),
+      "text": updatedText
+    }));
+  });
+
+  test("/todos/id out of range returns 404", () async {
+    var request = client.request("/todos/5")
+      ..json = {
+        "text": "I wish I could update something"
+      };
+    var response = await request.put();
+    expect(response, hasStatus(404));
   });
 }

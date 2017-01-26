@@ -27,7 +27,6 @@ class TodoController extends HTTPController
   {
     request.decodeBody();
     var requestBody = request.requestBodyObject;
-    print(requestBody);
     var updateQuery = new Query<Todo>()
       ..valueMap = requestBody
       ..matchOn.id = id;
