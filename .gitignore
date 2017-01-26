@@ -1,0 +1,13 @@
+# pub generated files
+.buildlog
+.pub/
+build/
+packages
+.packages
+pubspec.lock
+
+# dart2js generated files
+*.dart.js
+*.js_
+*.js.deps
+*.js.map

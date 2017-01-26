@@ -1,0 +1,10 @@
+name: dart_todo_server
+description: API server
+version: 0.0.1
+author: Mike Zrimsek
+
+environment:
+  sdk: '>=1.20.0 <2.0.0'
+
+dependencies:
+  aqueduct: any  
