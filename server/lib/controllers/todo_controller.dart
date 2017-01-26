@@ -14,9 +14,9 @@ class TodoController extends HTTPController
   createTodo() async 
   {
     request.decodeBody();
-    var todoText = request.requestBodyObject;
+    var requestBody = request.requestBodyObject;
     var insertQuery = new Query<Todo>()
-      ..values.text = todoText;
+      ..valueMap = requestBody;
     var newTodo = await insertQuery.insert();
     return new Response.ok(newTodo);
   }

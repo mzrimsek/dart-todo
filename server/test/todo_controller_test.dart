@@ -48,4 +48,13 @@ void main()
     })));
     expect(response.decodedBody, hasLength(greaterThan(0)));
   });
+
+  test("/todos creates new todo", () async {
+    var request = client.request("/todos")
+      ..json = {
+        "text": "test todo"
+      };
+    var response = await request.post();
+    expect(response, hasStatus(200));
+  });
 }
