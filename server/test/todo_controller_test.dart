@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:dart_todo_server/todo.dart';
+import 'package:dart_todo_server/dart_todo_server.dart';
 
 void main()
 {
@@ -17,6 +17,18 @@ void main()
     {
       await context.persistentStore.execute(command);
     }
+
+    var todos = [
+      "Todo 1",
+      "Todo 2"
+    ];
+
+    for(var todo in todos)
+    {
+      var insertQuery = new Query<Todo>()
+        ..values.text = todo;
+      await insertQuery.insert();
+    }
   });
 
   tearDownAll(() async {
@@ -26,6 +38,10 @@ void main()
 
   test("/todos returns list of todos", () async {
     var response = await client.request("/todos").get();
-    expect(response, hasStatus(200));
+    expect(response, hasResponse(200, everyElement({
+      "id": greaterThan(0),
+      "text": isString
+    })));
+    expect(response.decodedBody, hasLength(greaterThan(0)));
   });
 }

@@ -1,9 +1,9 @@
-import 'todo.dart';
+import 'dart_todo_server.dart';
 
 class TodoRequestSink extends RequestSink
 {
   ManagedContext context;
-  
+
   TodoRequestSink(Map<String, dynamic> options) : super(options) {
     var dataModel = new ManagedDataModel([Todo]);
     var persistentStore = new PostgreSQLPersistentStore.fromConnectionInfo("dart", 

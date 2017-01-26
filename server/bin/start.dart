@@ -1,4 +1,4 @@
-import 'package:dart_todo_server/todo.dart';
+import 'package:dart_todo_server/dart_todo_server.dart';
 
 void main()
 {

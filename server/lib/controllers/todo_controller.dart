@@ -1,4 +1,4 @@
-import '../todo.dart';
+import '../dart_todo_server.dart';
 
 class TodoController extends HTTPController
 {
