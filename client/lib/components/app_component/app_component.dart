@@ -8,7 +8,7 @@ import '../../dart_todo_client.dart';
   templateUrl: 'app_component.html',
   styleUrls: const ['app_component.css'],
   directives: const [ROUTER_DIRECTIVES],
-  providers: const [TodoService, ROUTE_PROVIDERS]
+  providers: const [TodoService, ROUTER_PROVIDERS]
 )
 
 @RouteConfig(const [
@@ -21,5 +21,5 @@ import '../../dart_todo_client.dart';
 ])
 
 class AppComponent {
-  String title = 'Todos';
+  String title = 'Dart Todo';
 }
