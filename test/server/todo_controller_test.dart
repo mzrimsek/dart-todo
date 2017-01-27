@@ -41,7 +41,7 @@ void main()
   });
 
   test("/todos returns list of todos", () async {
-    var response = await client.request("/todos").get();
+    var response = await client.request("/api/todos").get();
     expect(response, hasResponse(200, everyElement({
       "id": greaterThan(0),
       "text": isString
@@ -51,7 +51,7 @@ void main()
 
   test("/todos returns new todo", () async {
     var newText = "test todo";
-    var request = client.request("/todos")
+    var request = client.request("/api/todos")
       ..json = {
         "text": newText
       };
@@ -64,7 +64,7 @@ void main()
 
   test("/todos/id returns updated todo", () async {
     var updatedText = "updated";
-    var request = client.request("/todos/1")
+    var request = client.request("/api/todos/1")
       ..json = {
         "text": updatedText
       };
@@ -76,7 +76,7 @@ void main()
   });
 
   test("/todos/id out of range returns 404", () async {
-    var request = client.request("/todos/5")
+    var request = client.request("/api/todos/5")
       ..json = {
         "text": "I wish I could update something"
       };
@@ -85,12 +85,12 @@ void main()
   });
 
   test("/todos/id deletes todo", () async {
-    var response = await client.request("/todos/1").delete();
+    var response = await client.request("/api/todos/1").delete();
     expect(response, hasResponse(200, isNull));
   });
 
   test("/todos/id out of range returns 404", () async {
-    var response = await client.request("/todos/5").delete();
+    var response = await client.request("/api/todos/5").delete();
     expect(response, hasStatus(404));
   });
 }
