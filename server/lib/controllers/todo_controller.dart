@@ -3,7 +3,7 @@ import '../dart_todo_server.dart';
 class TodoController extends HTTPController
 {
   @httpGet
-  getAllTodos() async
+  getTodos() async
   {
     var todoQuery = new Query<Todo>();
     var todos = await todoQuery.fetch()
