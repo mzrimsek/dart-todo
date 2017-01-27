@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:angular2/core.dart';
 import 'package:http/http.dart';
 
-import '../models/todo.view.dart';
+import '../models/todoView.dart';
 import '../helpers/web_request_helper.dart';
 
 @Injectable()
@@ -16,13 +16,13 @@ class TodoService
 
   TodoService(this._http);
 
-  Future<List<Todo>> getTodos() async
+  Future<List<TodoView>> getTodos() async
   {
     try
     {
       final response = await _http.get(_todosUrl);
       final todos = WebRequestHelper.extractData(response)
-        .map((value) => new Todo.fromJson(value))
+        .map((value) => new TodoView.fromJson(value))
         .toList();
       return todos;
     }

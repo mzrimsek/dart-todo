@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 
-import '../../dart_todo_client.dart';
+import '../../services/todo_service.dart';
+import '../../models/todoView.dart';
 
 @Component(
   selector: 'todos',
@@ -13,7 +14,7 @@ import '../../dart_todo_client.dart';
 
 class TodoComponent implements OnInit
 {
-  List<Todo> todos;
+  List<TodoView> todos;
 
   final TodoService _todoService;
   final Router _router;  

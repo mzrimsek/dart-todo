@@ -1,7 +1,8 @@
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 
-import '../../dart_todo_client.dart';
+import '../../services/todo_service.dart';
+import '../todo_component/todo_component.dart';
 
 @Component(
   selector: 'todo-app',
