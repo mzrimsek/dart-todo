@@ -1,6 +1,6 @@
-import '../dart_todo_server.dart';
+part of dart_todo;
 
-class RequestHelper
+class ApiRequestHelper
 {
   static dynamic DecodeAndGetRequestBody(Request request)
   {
