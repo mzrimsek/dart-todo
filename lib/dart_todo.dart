@@ -3,10 +3,11 @@ library dart_todo;
 import 'package:aqueduct/aqueduct.dart';
 export 'package:aqueduct/aqueduct.dart';
 
-import 'package:path/path.dart' as path;
 import 'dart:io' as io;
-import 'package:mime/mime.dart' as mime;
 import 'dart:convert';
+
+import 'package:path/path.dart' as path;
+import 'package:mime/mime.dart' as mime;
 
 part 'todo_request_sink.dart';
 
