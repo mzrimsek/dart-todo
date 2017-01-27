@@ -1,4 +1,4 @@
-import '../dart_todo_server.dart';
+part of dart_todo;
 
 class TodoController extends HTTPController
 {
@@ -14,7 +14,7 @@ class TodoController extends HTTPController
   @httpPost
   createTodo() async 
   {
-    var requestBody = RequestHelper.DecodeAndGetRequestBody(request);
+    var requestBody = ApiRequestHelper.DecodeAndGetRequestBody(request);
     var insertQuery = new Query<Todo>()
       ..valueMap = requestBody;
     var newTodo = await insertQuery.insert();
@@ -24,7 +24,7 @@ class TodoController extends HTTPController
   @httpPut
   updateTodo(@HTTPPath("id") int id) async
   {
-    var requestBody = RequestHelper.DecodeAndGetRequestBody(request);
+    var requestBody = ApiRequestHelper.DecodeAndGetRequestBody(request);
     var updateQuery = new Query<Todo>()
       ..valueMap = requestBody
       ..matchOn.id = id;
