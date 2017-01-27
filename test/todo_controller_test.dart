@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:dart_todo_server/dart_todo_server.dart';
+import '../server/lib/dart_todo_server.dart';
 
 void main()
 {
