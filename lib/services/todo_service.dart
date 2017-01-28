@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:angular2/core.dart';
 import 'package:http/http.dart';
 
-import '../models/todoView.dart';
+import '../models/todo_view.dart';
 import '../helpers/web_request_helper.dart';
 
 @Injectable()
@@ -28,7 +28,7 @@ class TodoService
     }
     catch(e)
     {
-      WebRequestHelper.handleError(e);
+      throw WebRequestHelper.handleError(e);
     }
   }
 }
