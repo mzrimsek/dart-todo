@@ -4,7 +4,7 @@ import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 
 import '../../services/todo_service.dart';
-import '../../models/todoView.dart';
+import '../../models/todo_view.dart';
 
 @Component(
   selector: 'todos',
