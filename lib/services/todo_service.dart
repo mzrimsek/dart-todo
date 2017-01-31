@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:angular2/core.dart';
 import 'package:http/http.dart';
@@ -25,6 +26,22 @@ class TodoService
         .map((value) => new TodoView.fromJson(value))
         .toList();
       return todos;
+    }
+    catch(e)
+    {
+      throw WebRequestHelper.handleError(e);
+    }
+  }
+
+  Future<TodoView> addTodo(String text) async
+  {
+    try
+    {
+      var requestBody = JSON.encode({'text': text});
+      final response = await _http.post(_todosUrl, headers: _headers, body: requestBody);
+
+      var responseBody = WebRequestHelper.extractData(response);
+      return new TodoView.fromJson(responseBody);
     }
     catch(e)
     {
