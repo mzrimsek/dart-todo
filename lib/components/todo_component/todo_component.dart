@@ -26,6 +26,15 @@ class TodoComponent implements OnInit
     todos = await _todoService.getTodos();
   }
 
+  Future<Null> addTodo(String text) async
+  {
+    var newTodo = await _todoService.addTodo(text);
+    if(newTodo != null)
+    {
+      todos.add(newTodo);
+    }
+  }
+
   Future<Null> markComplete(TodoView todo) async
   {
     var success = await _todoService.deleteTodo(todo);

@@ -1,5 +1,10 @@
 <h3>Todos</h3>
 <div>
+    <div>
+        <label>New Todo:</label> 
+        <input #todoText />
+        <button (click)="addTodo(todoText.value); todoText.value=''">Add</button>
+    </div>
     <div *ngFor="let todo of todos">
         <div class="todo">
             <h4>{{todo.text}}</h4>
