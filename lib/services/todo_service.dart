@@ -28,7 +28,6 @@ class TodoService
     }
     catch(e)
     {
-      print("THREW ERROR");
       throw WebRequestHelper.handleError(e);
     }
   }
