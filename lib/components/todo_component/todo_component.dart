@@ -23,6 +23,6 @@ class TodoComponent implements OnInit
 
   Future<Null> ngOnInit() async
   {
-    todos = (await _todoService.getTodos()).toList();
+    todos = await _todoService.getTodos();
   }
 }
