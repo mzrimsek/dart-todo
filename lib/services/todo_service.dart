@@ -31,4 +31,18 @@ class TodoService
       throw WebRequestHelper.handleError(e);
     }
   }
+
+  Future<bool> deleteTodo(TodoView todo) async
+  {
+    try
+    {
+      var url = '$_todosUrl/${todo.id}';
+      final response = await _http.delete(url, headers: _headers);
+      return response.statusCode == 200;
+    }
+    catch(e)
+    {
+      throw WebRequestHelper.handleError(e);
+    }
+  }
 }
