@@ -10,7 +10,7 @@ import '../helpers/web_request_helper.dart';
 class TodoService
 {
   static final _headers = { 'Content-Type': 'application/json' };
-  static const _todosUrl = 'http://localhost:8080/api/todos';
+  static const _todosUrl = '/api/todos';
 
   final Client _http;
 
@@ -28,6 +28,7 @@ class TodoService
     }
     catch(e)
     {
+      print("THREW ERROR");
       throw WebRequestHelper.handleError(e);
     }
   }
