@@ -30,5 +30,6 @@ transformers:
         BrowserClient: 'package:http/browser_client.dart'
         Client: 'package:http/http.dart'
 - $dart2js:
+    minify: true
     commandLineOptions: [--show-package-warnings, --dump-info]
 - dart_to_js_script_rewriter
