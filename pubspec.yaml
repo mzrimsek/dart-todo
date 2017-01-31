@@ -1,6 +1,6 @@
 name: dart_todo
-description: API server
-version: 0.0.1
+description: Todo app
+version: 0.7.0
 author: Mike Zrimsek
 
 environment:
