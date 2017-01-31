@@ -3,6 +3,7 @@
     <div *ngFor="let todo of todos">
         <div class="todo">
             <h4>{{todo.text}}</h4>
+            <button (click)="markComplete(todo)">Complete</button>
         </div>
     </div>
 </div>
