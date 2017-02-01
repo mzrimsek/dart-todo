@@ -1,14 +1,23 @@
-<h3>Todos</h3>
 <div>
-    <div>
-        <label>New Todo:</label> 
-        <input #todoText />
-        <button (click)="addTodo(todoText.value); todoText.value=''">Add</button>
-    </div>
-    <div *ngFor="let todo of todos">
-        <div class="todo">
-            <h4>{{todo.text}}</h4>
-            <button (click)="markComplete(todo)">Complete</button>
+    <div class="add-todo-input">
+        <div class="mdl-textfield mdl-js-textfield">
+            <label class="mdl-textfield__label" >New Todo:</label>    
+            <input class="mdl-textfield__input" #todoText />
         </div>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored" (click)="addTodo(todoText.value); todoText.value=''">
+            <i class="material-icons">add</i>
+        </button>
     </div>
+    <div class="todo-list">
+        <h3>Todos</h3>
+        <ul class="mdl-list">
+            <li class="mdl-list__item" *ngFor="let todo of todos">
+                <span class="mdl-list__item-primary-content">{{todo.text}}</span>
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)="markComplete(todo)">
+                    <i class="material-icons">done</i>
+                </button>
+            </li>
+        </ul>
+    </div>
+    
 </div>

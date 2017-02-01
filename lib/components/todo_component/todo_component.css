@@ -1,6 +1,6 @@
-h3 {
-  text-align: center; margin-bottom: 0;
+.add-todo-input{
+    padding: 16px;
 }
-h4 {
-  position: relative;
+.todo-list h3{
+    text-align: center;
 }
