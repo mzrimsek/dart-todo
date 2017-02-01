@@ -4,3 +4,6 @@
 .add-todo-input{
     padding: 16px;
 }
+.todo:hover{
+    background-color: #e0e0e0;
+}
