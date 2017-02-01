@@ -1,3 +1,7 @@
 # dart-todo
+Small todo app built with [Dart](https://www.dartlang.org/)
 
-Small todo app built with Dart using Aqueduct and Angular 2
+## Technologies
+* [Aqueduct](https://aqueduct.io/)
+* [Angular 2](https://webdev.dartlang.org/angular)
+* [Material Design Lite](https://getmdl.io/)
