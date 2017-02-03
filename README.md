@@ -5,3 +5,4 @@ Small todo app built with [Dart](https://www.dartlang.org/)
 * [Aqueduct](https://aqueduct.io/)
 * [Angular 2](https://webdev.dartlang.org/angular)
 * [Material Design Lite](https://getmdl.io/)
+* PostgreSQL
