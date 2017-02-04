@@ -9,13 +9,13 @@ environment:
 dependencies:
   aqueduct: ^1.0.4
   angular2: ^2.2.0
-  browser: ^0.10.0
-  dart_to_js_script_rewriter: ^1.0.1
-  http: ^0.11.0
-  stream_transformers: ^0.3.0
   mime: ^0.9.3
   path: ^1.4.1
+  http: ^0.11.0
+  stream_transformers: ^0.3.0
 dev_dependencies:
+  browser: ^0.10.0
+  dart_to_js_script_rewriter: ^1.0.1
   test: any
 
 transformers:
