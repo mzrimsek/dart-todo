@@ -12,5 +12,7 @@ pubspec.lock
 *.js.deps
 *.js.map
 
-# visual studio code
+# editor generated files
 .vscode/
+.idea/
+*.iml
