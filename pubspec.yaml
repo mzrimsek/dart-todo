@@ -13,10 +13,34 @@ dependencies:
   path: ^1.4.1
   http: ^0.11.0
   stream_transformers: ^0.3.0
+
 dev_dependencies:
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
   test: any
+
+anaylzer:
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+  errors:
+    todo: ignore
+
+linter:
+  rules:
+    - avoid_empty_else
+    - cancel_subscriptions
+    - close_sinks
+    - always_declare_return_types
+    - camel_case_types
+    - empty_constructor_bodies
+    - annotate_overrides
+    - avoid_init_to_null
+    - constant_identifier_names
+    - one_member_abstracts
+    - slash_for_doc_comments
+    - sort_constructors_first
+    - unnecessary_brace_in_string_interp
 
 transformers:
 - angular2:
