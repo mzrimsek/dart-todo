@@ -6,7 +6,7 @@ void main()
   var config = new TodoConfiguration("config.yaml.src");
   var app = new Application<TodoRequestSink>()
     ..configuration.configurationOptions = {
-      TodoRequestSink.ConfigurationKey: config
+      TodoRequestSink.configurationKey: config
     };
   var client = new TestClient(app);
 

@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:angular2/core.dart';
-
 import '../../services/todo_service.dart';
 import '../../models/todo_view.dart';
 

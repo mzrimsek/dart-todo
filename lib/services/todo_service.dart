@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:angular2/core.dart';
 import 'package:http/http.dart';
-
 import '../models/todo_view.dart';
 import '../helpers/web_request_helper.dart';
 

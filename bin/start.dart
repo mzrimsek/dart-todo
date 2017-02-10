@@ -8,7 +8,7 @@ void main()
   var app = new Application<TodoRequestSink>()
     ..configuration.port = port
     ..configuration.configurationOptions = {
-      TodoRequestSink.ConfigurationKey: config
+      TodoRequestSink.configurationKey: config
     };
 
   print("server started on port " + port.toString());

@@ -2,13 +2,13 @@ part of dart_todo;
 
 class TodoRequestSink extends RequestSink
 {
-  static String ConfigurationKey = "TodoRequestSink.Configuration";
+  static String configurationKey = "TodoRequestSink.Configuration";
   ManagedContext context;
 
   TodoRequestSink(Map<String, dynamic> options) : super(options) {
     var dataModel = new ManagedDataModel.fromCurrentMirrorSystem();
 
-    var config = options[ConfigurationKey];
+    var config = options[configurationKey];
     var database = config.database;
     var persistentStore = new PostgreSQLPersistentStore.fromConnectionInfo(database.username, 
                                                                            database.password, 
@@ -28,9 +28,9 @@ class TodoRequestSink extends RequestSink
     router
       .route("/*")
       .generate(() => new StaticFilesController());
-    Response.addEncoder(io.ContentType.parse("application/javascript"), (j) => UTF8.decode(j));
-    Response.addEncoder(io.ContentType.parse("text/*"), (j) => UTF8.decode(j));
-    Response.addEncoder(io.ContentType.parse("image/*"), (List<int> j) => new List<int>.from(j));
+    Response.addEncoder(io.ContentType.parse("application/javascript"), (file) => UTF8.decode(file));
+    Response.addEncoder(io.ContentType.parse("text/*"), (file) => UTF8.decode(file));
+    Response.addEncoder(io.ContentType.parse("image/*"), (List<int> file) => new List<int>.from(file));
   }
 }
 
