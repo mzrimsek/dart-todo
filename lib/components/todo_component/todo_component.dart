@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:angular2/core.dart';
-import 'package:angular2/router.dart';
 
 import '../../services/todo_service.dart';
 import '../../models/todo_view.dart';
@@ -17,9 +16,8 @@ class TodoComponent implements OnInit
   List<TodoView> todos;
 
   final TodoService _todoService;
-  final Router _router;  
 
-  TodoComponent(this._todoService, this._router);
+  TodoComponent(this._todoService);
 
   Future<Null> ngOnInit() async
   {
