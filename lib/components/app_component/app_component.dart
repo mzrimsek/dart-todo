@@ -22,6 +22,15 @@ import '../todo_component/todo_component.dart';
     name: 'Todos',
     component: TodoComponent,
     useAsDefault: true
+  ),
+  const Route(
+    path: '/404',
+    name: '404',
+    component: NotFoundComponent
+  ),
+  const Redirect(
+    path: '/**',
+    redirectTo: const ['/404']
   )
 ])
 
