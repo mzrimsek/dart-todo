@@ -1,8 +1,9 @@
 import 'package:angular2/core.dart';
 import 'package:angular2/platform/common.dart';
 import 'package:angular2/router.dart';
-import '../../services/todo_service.dart';
 import '../todo_component/todo_component.dart';
+import '../not_found_component/not_found_component.dart';
+import '../../services/todo_service.dart';
 
 @Component(
   selector: 'todo-app',
@@ -17,20 +18,19 @@ import '../todo_component/todo_component.dart';
 )
 
 @RouteConfig(const [
+  const Redirect(
+    path: '/',
+    redirectTo: const ['Todos']
+  ),
   const Route(
     path: '/todos',
     name: 'Todos',
-    component: TodoComponent,
-    useAsDefault: true
+    component: TodoComponent
   ),
   const Route(
-    path: '/404',
+    path: '/**',
     name: '404',
     component: NotFoundComponent
-  ),
-  const Redirect(
-    path: '/**',
-    redirectTo: const ['/404']
   )
 ])
 
