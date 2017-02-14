@@ -10,7 +10,8 @@ void main()
     };
   var client = new TestClient(app);
 
-  setUpAll(() async {
+  setUpAll(() async 
+  {
     await app.start(runOnMainIsolate: true);
 
     var context = ManagedContext.defaultContext;
@@ -35,12 +36,14 @@ void main()
     }
   });
 
-  tearDownAll(() async {
+  tearDownAll(() async 
+  {
     await ManagedContext.defaultContext.persistentStore.close();
     await app.stop();
   });
 
-  test("/todos returns list of todos", () async {
+  test("/todos returns list of todos", () async 
+  {
     var response = await client.request("/api/todos").get();
     expect(response, hasResponse(200, everyElement({
       "id": greaterThan(0),
@@ -49,7 +52,8 @@ void main()
     expect(response.decodedBody, hasLength(greaterThan(0)));
   });
 
-  test("/todos returns new todo", () async {
+  test("/todos returns new todo", () async 
+  {
     var newText = "test todo";
     var request = client.request("/api/todos")
       ..json = {
@@ -62,7 +66,8 @@ void main()
       }));
   });
 
-  test("/todos/id returns updated todo", () async {
+  test("/todos/id returns updated todo", () async 
+  {
     var updatedText = "updated";
     var request = client.request("/api/todos/1")
       ..json = {
@@ -75,7 +80,8 @@ void main()
     }));
   });
 
-  test("/todos/id out of range returns 404", () async {
+  test("/todos/id out of range returns 404", () async 
+  {
     var request = client.request("/api/todos/5")
       ..json = {
         "text": "I wish I could update something"
@@ -84,12 +90,14 @@ void main()
     expect(response, hasStatus(404));
   });
 
-  test("/todos/id deletes todo", () async {
+  test("/todos/id deletes todo", () async 
+  {
     var response = await client.request("/api/todos/1").delete();
     expect(response, hasResponse(200, isNull));
   });
 
-  test("/todos/id out of range returns 404", () async {
+  test("/todos/id out of range returns 404", () async 
+  {
     var response = await client.request("/api/todos/5").delete();
     expect(response, hasStatus(404));
   });
