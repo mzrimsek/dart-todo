@@ -1,6 +1,7 @@
 part of dart_todo;
 
-class StaticFilesController extends HTTPController {
+class StaticFilesController extends HTTPController 
+{
   final String basePath;
   final String defaultFile;
 
