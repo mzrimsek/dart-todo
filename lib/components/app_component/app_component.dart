@@ -1,4 +1,5 @@
 import 'package:angular2/core.dart';
+import 'package:angular2/platform/common.dart';
 import 'package:angular2/router.dart';
 import '../../services/todo_service.dart';
 import '../todo_component/todo_component.dart';
@@ -8,7 +9,11 @@ import '../todo_component/todo_component.dart';
   templateUrl: 'app_component.html',
   styleUrls: const ['app_component.css'],
   directives: const [ROUTER_DIRECTIVES],
-  providers: const [TodoService, ROUTER_PROVIDERS]
+  providers: const [
+    TodoService, 
+    ROUTER_PROVIDERS,
+    const Provider(LocationStrategy, useClass: HashLocationStrategy)
+  ]
 )
 
 @RouteConfig(const [
