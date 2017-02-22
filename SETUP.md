@@ -3,7 +3,7 @@
 2. [PostgreSQL](https://www.postgresql.org/download/)
 
 # Databases
-Run the following commands in psql
+Run the following commands in PostgreSQL. Using pgAdmin is recommended.
 
 ## Application Database
 Create the database
@@ -50,5 +50,6 @@ grant all on database dart_test to dart;
 4. Start server   
 ```dart bin/start.dart```
 
-## Testing
+# Testing
+Running all the tests is easy.  
 ```pub run test```
