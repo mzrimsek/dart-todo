@@ -34,10 +34,10 @@ ALTER DEFAULT PRIVILEGES FOR ROLE dart_todo_admin GRANT USAGE, SELECT, UPDATE ON
 ## Test Database
 This database will be used to run tests against.
 ```
-create database dart_test;  
-create user dart with createdb;  
-alter user dart with password 'dart';  
-grant all on database dart_test to dart;  
+CREATE DATABASE dart_test;  
+CREATE USER dart WITH CREATEDB;  
+ALTER USER dart WITH PASSWORD 'dart';  
+GRANT ALL ON DATABASE dart_test TO dart;  
 ```
 
 # Run Project
@@ -45,9 +45,13 @@ grant all on database dart_test to dart;
 ```git clone https://github.com/mzrimsek/dart-todo.git```
 2. Install dependencies   
 ```pub get```
-3. Build project   
+3. Activate aqueduct globally (you may have to add this to your path after it finishes)  
+```pub global activate aqueduct```
+4. Run database migrations  
+```aqueduct db upgrade```
+5. Build project   
 ```pub build```
-4. Start server   
+6. Start server   
 ```dart bin/start.dart```
 
 # Testing
