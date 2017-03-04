@@ -46,7 +46,7 @@ GRANT ALL ON DATABASE dart_test TO dart;
 2. Install dependencies   
 ```pub get```
 3. Activate aqueduct globally (you may have to add this to your path after it finishes)  
-```pub global activate aqueduct```
+```pub global activate aqueduct 1.0.4```
 4. Run database migrations  
 ```aqueduct db upgrade```
 5. Build project   

@@ -7,7 +7,7 @@ environment:
   sdk: '>=1.20.0 <2.0.0'
 
 dependencies:
-  aqueduct: ^1.0.4
+  aqueduct: 1.0.4
   angular2: ^2.2.0
   mime: ^0.9.3
   path: ^1.4.1
