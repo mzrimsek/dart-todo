@@ -9,3 +9,7 @@ Small todo app built with [Dart](https://www.dartlang.org/)
 
 ## Usage
 [See SETUP file](SETUP.md)
+
+## Tutorials
+* [Aqueduct](https://stablekernel.github.io/aqueduct/tut/getting-started/)
+* [Angular 2](https://webdev.dartlang.org/angular/tutorial)
